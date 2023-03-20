@@ -1,12 +1,12 @@
 import pandas as pd
 import os
 
-cshtml_folder = r'D:\GitProject\Unicorn\UnicornWeb\Unicorn\Views'
+cshtml_folder = r'D:\GitProject\Unicorn\UnicornWeb\Unicorn'
 cshtml_contents = []
 for subdir, _, files in os.walk(cshtml_folder):
     for file in files:
-        if file.endswith('.cshtml'):
-            with open(os.path.join(subdir, file), 'r', encoding='utf-8') as f:
+        if file.endswith('.cshtml') or file.endswith('.cs') or file.endswith('.js') or file.endswith('.css') or file.endswith('.html'):
+            with open(os.path.join(subdir, file), 'r', encoding='latin-1') as f:
                 content = f.read()
                 cshtml_contents.append(content)
 
